@@ -20,10 +20,12 @@ O_fILES = $(SRC:.c=.o)
 
 O_B_FILES = $(B_SRC:.c=.o)
 
+O_MAIN = $(MAIN_MAN:.c=.o)
+
 all : $(NAME)
 
-$(NAME) : $(O_fILES) $(MAIN_MAN)
-	$(CC) $(O_fILES) $(MAIN_MAN) -o $(NAME)
+$(NAME) : $(O_fILES) $(O_MAIN)
+	$(CC) $(O_fILES) $(O_MAIN) -o $(NAME)
 
 bonus : $(NAME) $(O_fILES) $(O_B_FILES)
 	$(CC) $(O_fILES) $(O_B_FILES) -o $(BONUS)
